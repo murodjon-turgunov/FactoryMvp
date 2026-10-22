@@ -11,6 +11,25 @@ Each project lives in its own folder: `projects/<name>/`.
   - `tester` — writes and runs tests for one task, reports failures. Does not fix code.
   - `reviewer` — reviews the finished project with fresh eyes. Does not edit code.
 
+## Starting a project from a chat message (the normal way)
+
+I will not write specs or run commands myself. I just describe what I want in chat.
+When I do:
+
+1. **Understand.** Read my message. Ask only the questions whose answers really change
+   what gets built (max 3, in one message). Decide the rest yourself with sensible
+   defaults and list those assumptions.
+2. **Spec.** Pick a short folder name (`kebab-case`). Create `projects/<name>/` like
+   `/new-project` does, and fill in `SPEC.md` yourself from my description.
+   Choose the tech stack yourself (simple and common; default: Node.js + TypeScript + vitest).
+3. **Plan.** Call the `planner` subagent → `tasks.md`.
+4. **Show and wait.** Show me, briefly: the goal, features, tech stack, out of scope,
+   and the task list. **Wait for my OK.** Change the spec/tasks if I ask.
+5. **Build.** After my OK, run the build workflow below (from step 3), without asking
+   me again unless a rule below says to stop.
+
+`/new-project <name>` and `/build <name>` still work if I use them.
+
 ## Workflow: building a project
 
 1. **Read** `projects/<name>/SPEC.md` (and `projects/<name>/CLAUDE.md` if it exists).

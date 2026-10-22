@@ -5,17 +5,17 @@ Every project lives in `projects/<name>/`. The workflow is in [`CLAUDE.md`](CLAU
 
 ## How to use
 
-Open Claude Code in this repo's root folder, then:
+Open Claude Code in this repo and **just describe what you want** in chat, e.g.
+"a CLI that converts CSV to JSON". Claude then:
 
-1. **`/new-project <name>`** — creates `projects/<name>/` with `SPEC.md`, `CLAUDE.md`,
-   `src/` and `tests/`.
-2. Fill in `projects/<name>/SPEC.md` (goal, features, tech stack, out of scope,
-   definition of done).
-3. **`/build <name>`** — runs the whole workflow:
-   `planner` writes `tasks.md` → for each task: code → `tester` (max 3 attempts) →
-   check off + git commit → `reviewer` → fixes → short summary.
+1. asks only the questions that matter (or none),
+2. writes `projects/<name>/SPEC.md` and a task list itself,
+3. shows you the plan and **waits for your OK**,
+4. builds it: code → `tester` (max 3 attempts per task) → check off + commit →
+   `reviewer` → fixes → short summary.
 
-Running `/build <name>` again continues from the first unchecked task in `tasks.md`.
+Manual commands still exist: `/new-project <name>` (empty project from the template)
+and `/build <name>` (build or continue from the first unchecked task).
 
 ## What's inside
 
